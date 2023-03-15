@@ -1,17 +1,21 @@
 <template>
   {{ stories }}
-  <Checkout />
+  <Checkout v-if="!userSubscribed" />
+  <div v-else>You are subscribed {{ customerId }}</div>
 </template>
 
 <script>
 import Checkout from './Checkout';
-// const stripe = require('stripe');
-// import Stripe from 'stripe';
 import { loadStripe } from '@stripe/stripe-js';
 
 export default {
   components: { Checkout },
   async mounted() {
+    this.customerId = this.getCookie('customerId');
+
+    this.$nextTick(() => {
+      console.log(this.getCookie('customerId'));
+    });
     const stripe = await loadStripe(
       'pk_test_51MlUlIIfSGgugy8a3BP9NeyNrH5lOQRcVJDJuQedLzpSZoLZMUo0HwwBv0RlEUAUqPOck2hCdqK09k2dng5HmitX00nOyQ6wMV'
     );
@@ -27,9 +31,26 @@ export default {
   data() {
     return {
       stories: [],
+      customerId: null,
     };
   },
-  methods: {},
+  methods: {
+    getCookie(name) {
+      var nameEQ = name + '=';
+      var ca = document.cookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    },
+  },
+  computed: {
+    userSubscribed() {
+      return Boolean(this.customerId);
+    },
+  },
 };
 </script>
 <style>

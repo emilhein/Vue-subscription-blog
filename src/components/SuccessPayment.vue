@@ -34,12 +34,12 @@
           <h3>Subscription to Starter plan successful!</h3>
         </div>
       </div>
-      <form action="/create-portal-session" method="POST">
+      <!-- <form action="/create-portal-session" method="POST">
         <input type="hidden" id="session-id" name="session_id" value="" />
         <button id="checkout-and-portal-button" type="submit">
           Manage your billing information
         </button>
-      </form>
+      </form> -->
     </section>
   </div>
 </template>
@@ -47,6 +47,21 @@
 <script>
 export default {
   components: {},
+  mounted() {
+    const customerId = this.$route.params.customerId;
+
+    function setCookie(name, value, days) {
+      var expires = '';
+      if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+        expires = '; expires=' + date.toUTCString();
+      }
+      document.cookie = name + '=' + (value || '') + expires + '; path=/';
+    }
+
+    setCookie('customerId', customerId, 30);
+  },
   data() {
     return {};
   },

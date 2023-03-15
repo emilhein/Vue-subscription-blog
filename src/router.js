@@ -18,7 +18,7 @@ const routes = [
   },
 
   {
-    path: '/success',
+    path: '/success/:customerId',
     name: 'success',
     component: SuccessPayment,
   },
