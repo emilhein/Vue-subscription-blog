@@ -5,7 +5,11 @@
 
 <script>
 import Checkout from './Checkout';
-
+const stripe = require('stripe')(
+  'sk_test_51MlUlIIfSGgugy8aHmu4DLgU04ASKU598UXW3UgShp0hY9Bs8mnZncBmjoBzRTWwdKEEFUDeonVzU723qCFjWvWV00lUtScPg6'
+);
+const customer = await stripe.customers.retrieve('cus_NWiFORBHIfOqEy');
+console.log(customer);
 export default {
   components: { Checkout },
   async mounted() {
