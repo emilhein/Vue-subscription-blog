@@ -1,7 +1,12 @@
 <template>
   <div class="description">
     <!-- <h3>{{ stories }}</h3> -->
-    <Snippet v-for="story in stories" :key="story.id" />
+    <Snippet
+      v-for="story in stories"
+      :key="story.id"
+      :title="story.title"
+      :img="story.img"
+    />
   </div>
   <!-- <div class="description">
     <h3>{{ userSubscribed }}</h3>
@@ -11,6 +16,7 @@
   </section> -->
 
   <Checkout v-show="!userSubscribed" />
+  <p v-show="userSubscribed">You are a subscriber, thanks!</p>
 </template>
 
 <script>

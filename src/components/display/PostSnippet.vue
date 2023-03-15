@@ -1,13 +1,8 @@
 <template>
-  <main class="cards">
+  <!-- <main class="cards">
     <section class="card card-one">
       <div class="top">
-        <div class="date">5 Sep 2022</div>
-        <div class="actions">
-          <i class="fa-regular fa-bookmark"></i>
-          <i class="fa-regular fa-heart"></i>
-          <i class="fa-regular fa-comment"></i>
-          <i class="fa-solid fa-share-nodes"></i>
+   
         </div>
       </div>
       <div class="bottom">
@@ -15,213 +10,268 @@
           <div>
             <img
               class="author-img"
-              src="https://randomuser.me/api/portraits/men/10.jpg"
+              :src="img"
             />
           </div>
-          <span>John Doe</span>
+          <span>{{author}}</span>
         </div>
-        <h1>Best Gardening Ideas in 2022</h1>
+        <h1>{{title}}</h1>
         <div class="text">
           <p>
-            Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
-            consecte, adipisci...
+          {{subtitle}}
+         
           </p>
           <button>Read More</button>
         </div>
       </div>
     </section>
-  </main>
+  </main> -->
+  <div class="container">
+    <div class="card card2">
+      <h2>{{ title }}</h2>
+      <i class="fas fa-arrow-right"></i>
+      <!-- <p>a lonely trip.</p> -->
+      <div class="pic" :style="`background-image : url(${img})`"></div>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <!-- <div class="social">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-github"></i>
+      </div> -->
+      <button>Read</button>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'postSnippet',
+  props: {
+    title: {
+      type: String,
+    },
+    img: {
+      type: String,
+    },
+  },
 };
 </script>
 
 <style scoped>
-/* reset css */
 * {
   margin: 0;
   padding: 0;
-  border: 0;
   box-sizing: border-box;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 14px;
-  vertical-align: baseline;
+}
+i {
+  opacity: 0;
+  font-size: 18px;
+  color: #fff;
+  will-change: transform;
+  -webkit-transform: scale(0.1);
+  transform: scale(0.1);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+h2 {
+  pointer-events: none;
 }
 body {
+  background-color: #e6e5e1;
+  width: 100vw;
+  height: 100vh;
+}
+.container {
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #4158d0;
-  background-image: linear-gradient(120deg, #0093e9 0%, #8aeef1 80%);
-  height: 100vh;
-  line-height: 1;
-}
-
-ol,
-ul {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* header */
-header {
-  font-weight: 100;
-  margin: 0 auto 20px;
-  color: #fff;
-}
-
-header a {
-  color: #015c91;
-}
-
-header a:hover {
-  text-decoration: underline;
-}
-
-/* main styles */
-main {
-  /*  not yet  */
-}
-
-.card {
-  display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  color: #fff;
-  background-color: #fff;
+}
+.container .card {
+  position: relative;
+  width: 500px;
   height: 200px;
-  padding: 1rem;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.5);
+  background-color: #fff;
   overflow: hidden;
+  margin-bottom: 4px;
 }
-
-.card-one {
-  background-image: url('https://picsum.photos/id/89/500/300');
-  background-size: cover;
-  background-position-x: center;
-  background-position-y: bottom;
-}
-
-.card-two {
-  background-image: url('https://picsum.photos/id/715/500/300');
-  background-size: cover;
-  background-position: center;
-}
-
-/* top */
-.top {
-  display: flex;
-  justify-content: space-between;
-  opacity: 0.8;
-}
-
-.actions i {
-  margin-left: 0.5em;
-  transition: transform 200ms ease-in-out;
-}
-
-.actions i:hover {
-  cursor: pointer;
-  transform: scale(1.2) translatey(-0.2em);
-}
-
-/* bottom */
-.bottom {
-  position: relative;
-  z-index: 1;
-  transform: translateY(40%);
-  transition: transform 500ms ease;
-}
-
-.bottom::after {
-  /*   outline: 1px solid tomato; */
-  z-index: -1;
+.container .card:before {
   content: '';
+  z-index: 99;
   position: absolute;
-  bottom: -1em;
-  left: -1em;
-  right: 0;
-  width: calc(100% + 2rem);
-  height: calc(100% + 5rem);
-  background: linear-gradient(to top, rgba(0 0 0 / 0.9), rgba(0 0 0 / 0));
+  top: -10px;
+  left: 32px;
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  background-color: #e6e5e1;
 }
-
-.bottom:hover,
-.bottom:hover::after {
-  transform: translateY(0);
-}
-
-.author {
-  display: flex;
-  align-items: center;
-  margin-bottom: 2px;
-  opacity: 0.8;
-}
-
-.author-img {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  margin-right: 4px;
-}
-
-.bottom h1 {
-  display: inline-block;
-  font-size: 2.5em;
-  position: relative;
-  margin-bottom: 0.3em;
-}
-
-.bottom h1::after {
-  position: absolute;
+.container .card:after {
   content: '';
-  bottom: -0.2em;
-  left: -2rem;
-  width: calc(100% + 2rem);
-  height: 0.1em;
-  background-color: #8aeef1;
-  transform: scaleX(0);
-  transition: transform 600ms ease;
-  transform-origin: right;
+  z-index: 99;
+  position: absolute;
+  bottom: -10px;
+  left: 32px;
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  background-color: #e6e5e1;
 }
-
-.bottom:hover h1::after {
-  transform: scaleX(1);
-  transform-origin: left;
+.container .card ul {
+  z-index: 99;
+  position: absolute;
+  left: 39px;
+  top: 5px;
+  list-style-type: none;
 }
-
-.text {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+.container .card ul li {
+  width: 2px;
+  height: 2px;
+  border-radius: 2px;
+  margin: 6px 0;
+  background-color: #e6e5e1;
 }
-
-.text p {
-  font-weight: 100;
-}
-
-.text button {
-  font-size: 0.8em;
-  padding: 0.5em 0.8em;
-  margin-top: 3px;
-  margin-left: 10px;
-  border-radius: 5px;
-  color: rgba(0 0 0/ 0.8);
-  background-color: #8aeef1;
-}
-
-.text button:hover {
-  cursor: pointer;
+.container .card h2 {
+  z-index: 99;
+  font-family: 'Poppins', sans-serif;
+  position: absolute;
+  bottom: 0;
+  right: 130px;
+  font-size: 60px;
+  font-weight: 700;
   color: #fff;
-  background-color: #4a7e80;
+}
+.container .card .fa-arrow-right {
+  z-index: 100;
+  position: absolute;
+  right: 75px;
+  bottom: 25px;
+  font-size: 40px;
+  cursor: pointer;
+}
+.container .card p {
+  z-index: 99;
+  position: absolute;
+  top: 20px;
+  right: 70px;
+  color: #333;
+  opacity: 0.7;
+  font-size: 12px;
+  letter-spacing: 1px;
+  writing-mode: vertical-lr;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.container .card .pic {
+  z-index: 100;
+  width: 400px;
+  height: 200px;
+  background-image: url('https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80');
+  background-size: 100% 100%;
+  filter: grayscale(100%);
+}
+.container .card .social {
+  position: absolute;
+  left: 60px;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 180px;
+  height: 64px;
+  border-radius: 80px;
+}
+.container .card .social i:nth-of-type(1) {
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+.container .card .social i:nth-of-type(2) {
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+.container .card .social i:nth-of-type(3) {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+.container .card .social i:nth-of-type(4) {
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+.container .card:hover i {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.container .card button {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  width: 30px;
+  height: 30px;
+  background-color: #da4d1d;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  mix-blend-mode: hard-light;
+}
+.container .card button i {
+  font-size: 3rem;
+}
+.container .card:hover button {
+  transform: scale(16.5);
+}
+.container .card:hover p {
+  color: #fff;
+}
+.container .card:hover .pic {
+  filter: grayscale(0);
+}
+.container .card2 .pic {
+  background-image: url('https://images.unsplash.com/photo-1528785198459-ec50485704c7?ixlib=rb-0.3.5&s=3a2fc3039516555bbb2e9cd2967bd321&auto=format&fit=crop&w=1537&q=80');
+}
+.container .card2 button {
+  background-color: #2b26c3;
+}
+.dr {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 100px;
 }
 </style>
