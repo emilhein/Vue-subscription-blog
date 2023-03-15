@@ -34,7 +34,7 @@ export default {
       ],
       // successURL: window.location.origin + '/success',
       successURL:
-        'https://subscription-server.herokuapp.com/subscription/success',
+        'https://subscription-server.herokuapp.com/subscription/success?session_id={CHECKOUT_SESSION_ID}',
       cancelURL: window.location.origin + '/cancel',
     };
   },
