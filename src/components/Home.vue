@@ -1,7 +1,15 @@
 <template>
-  {{ stories }}
-  <Checkout v-if="!userSubscribed" />
-  <div v-else>You are subscribed {{ customerId }}</div>
+  <div class="description">
+    <h3>{{ stories }}</h3>
+  </div>
+  <!-- <div class="description">
+    <h3>{{ userSubscribed }}</h3>
+  </div>
+  <section>
+    <h3>{{ customerId }}</h3>
+  </section> -->
+
+  <Checkout v-show="!userSubscribed" />
 </template>
 
 <script>
