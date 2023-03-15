@@ -32,7 +32,9 @@ export default {
           quantity: 1,
         },
       ],
-      successURL: window.location.origin + '/success',
+      // successURL: window.location.origin + '/success',
+      successURL:
+        'https://subscription-server.herokuapp.com/subscription/success',
       cancelURL: window.location.origin + '/cancel',
     };
   },

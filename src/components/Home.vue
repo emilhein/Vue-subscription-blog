@@ -12,8 +12,6 @@ export default {
     let stories = await fetch(
       'https://subscription-server.herokuapp.com/posts'
     );
-
-    console.log(stories);
     let serialized = await stories.json();
     this.stories = serialized;
   },
