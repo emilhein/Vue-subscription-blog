@@ -27,7 +27,7 @@
     </section>
   </main> -->
   <div class="container">
-    <div class="card card2">
+    <div :class="`card ${id % 2 === 0 ? 'card-one' : 'card2'}`">
       <h2>{{ title }}</h2>
       <i class="fas fa-arrow-right"></i>
       <!-- <p>a lonely trip.</p> -->
@@ -57,13 +57,14 @@
         <li></li>
         <li></li>
       </ul>
-      <!-- <div class="social">
+      <div class="social">
         <i class="fab fa-facebook-f"></i>
         <i class="fab fa-twitter"></i>
         <i class="fab fa-instagram"></i>
         <i class="fab fa-github"></i>
-      </div> -->
-      <button>Read</button>
+      </div>
+
+      <button>{{ subscribed ? 'Read' : 'Premium' }}</button>
     </div>
   </div>
 </template>
@@ -71,6 +72,11 @@
 <script>
 export default {
   name: 'postSnippet',
+  data() {
+    return {
+      subscribed: null,
+    };
+  },
   props: {
     title: {
       type: String,
@@ -78,6 +84,22 @@ export default {
     img: {
       type: String,
     },
+    id: {
+      type: Number,
+    },
+  },
+  mounted() {
+    const getCookie = (name) => {
+      var nameEQ = name + '=';
+      var ca = document.cookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    };
+    this.subscribed = getCookie('customerId');
   },
 };
 </script>
@@ -240,7 +262,7 @@ body {
   position: absolute;
   right: 14px;
   bottom: 14px;
-  width: 30px;
+  width: 67px;
   height: 30px;
   background-color: #da4d1d;
   border: none;

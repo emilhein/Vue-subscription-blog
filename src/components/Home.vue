@@ -5,6 +5,7 @@
       v-for="story in stories"
       :key="story.id"
       :title="story.title"
+      :id="story.id"
       :img="story.img"
     />
   </div>
