@@ -24,7 +24,7 @@
           <li></li>
           <li></li>
           <li></li>
-          <li></li>
+          <li></li> 
           <li></li>
           <li></li>
           <li></li>
@@ -37,12 +37,12 @@
           <i class="fab fa-instagram"></i>
           <i class="fab fa-github"></i>
         </div>
-      
-      <a :href="`post/${id}`">
-          <button>{{ subscribed ? 'Read' : 'Premium' }}</button>
-      <a/>
+                        
+                        <a :href="`post/${id}`">
+                            <button>{{ subscribed ? 'Read' : 'Premium' }}</button>
+                        <a/>
     </div>
-  <!-- </div> -->
+  </div>
 </template>
 
 <script>
