@@ -1,71 +1,46 @@
 <template>
-  <!-- <main class="cards">
-    <section class="card card-one">
-      <div class="top">
-   
-        </div>
-      </div>
-      <div class="bottom">
-        <div class="author">
-          <div>
-            <img
-              class="author-img"
-              :src="img"
-            />
-          </div>
-          <span>{{author}}</span>
-        </div>
-        <h1>{{title}}</h1>
-        <div class="text">
-          <p>
-          {{subtitle}}
-         
-          </p>
-          <button>Read More</button>
-        </div>
-      </div>
-    </section>
-  </main> -->
+
   <div class="container">
     <div :class="`card ${id % 2 === 0 ? 'card-one' : 'card2'}`">
       <h2>{{ title }}</h2>
       <i class="fas fa-arrow-right"></i>
       <!-- <p>a lonely trip.</p> -->
       <div class="pic" :style="`background-image : url(${img})`"></div>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-      <div class="social">
-        <i class="fab fa-facebook-f"></i>
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-github"></i>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <div class="social">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-github"></i>
+        </div>
       </div>
-<a href="post/3">
-      <button>{{ subscribed ? 'Read' : 'Premium' }}</button>
-<a/>
+      <a :href="`post/${id}`">
+          <button>{{ subscribed ? 'Read' : 'Premium' }}</button>
+      <a/>
     </div>
   <!-- </div> -->
 </template>
