@@ -75,7 +75,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #242d60;
+  /* background: #242d60; */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Helvetica Neue', 'Ubuntu', sans-serif;
   height: 100vh;
