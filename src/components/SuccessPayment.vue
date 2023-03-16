@@ -61,6 +61,7 @@ export default {
     }
 
     setCookie('customerId', customerId, 30);
+    this.$router.push({ redirect: '/home' });
   },
   data() {
     return {};
