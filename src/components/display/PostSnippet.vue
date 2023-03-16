@@ -67,7 +67,7 @@
       <button>{{ subscribed ? 'Read' : 'Premium' }}</button>
 <a/>
     </div>
-  </div>
+  <!-- </div> -->
 </template>
 
 <script>
