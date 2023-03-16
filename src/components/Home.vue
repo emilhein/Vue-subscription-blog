@@ -1,6 +1,6 @@
 <template>
   <div class="description">
-    <!-- <h3>{{ stories }}</h3> -->
+    <Subscribed v-show="userSubscribed" />
     <Snippet
       v-for="story in stories"
       :key="story.id"
@@ -17,16 +17,16 @@
   </section> -->
 
   <Checkout v-show="!userSubscribed" />
-  <p v-show="userSubscribed">You are a subscriber, thanks!</p>
 </template>
 
 <script>
 import Checkout from './Checkout';
 import Snippet from './display/PostSnippet';
+import Subscribed from './display/Subscribed';
 import { loadStripe } from '@stripe/stripe-js';
 
 export default {
-  components: { Checkout, Snippet },
+  components: { Checkout, Snippet, Subscribed },
   async mounted() {
     this.customerId = this.getCookie('customerId');
 
