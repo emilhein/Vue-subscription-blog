@@ -37,7 +37,7 @@
           <i class="fab fa-instagram"></i>
           <i class="fab fa-github"></i>
         </div>
-      </div>
+      
       <a :href="`post/${id}`">
           <button>{{ subscribed ? 'Read' : 'Premium' }}</button>
       <a/>

@@ -23,7 +23,7 @@
 import Checkout from './Checkout';
 import Snippet from './display/PostSnippet';
 import Subscribed from './display/Subscribed';
-import { loadStripe } from '@stripe/stripe-js';
+// import { loadStripe } from '@stripe/stripe-js';
 
 export default {
   components: { Checkout, Snippet, Subscribed },
@@ -33,9 +33,9 @@ export default {
     this.$nextTick(() => {
       console.log(this.getCookie('customerId'));
     });
-    const stripe = await loadStripe(
-      'pk_test_51MlUlIIfSGgugy8a3BP9NeyNrH5lOQRcVJDJuQedLzpSZoLZMUo0HwwBv0RlEUAUqPOck2hCdqK09k2dng5HmitX00nOyQ6wMV'
-    );
+    // const stripe = await loadStripe(
+    //   'pk_test_51MlUlIIfSGgugy8a3BP9NeyNrH5lOQRcVJDJuQedLzpSZoLZMUo0HwwBv0RlEUAUqPOck2hCdqK09k2dng5HmitX00nOyQ6wMV'
+    // );
 
     // console.log(stripe);
     // const customer = await stripe.customers.retrieve('cus_NWiFORBHIfOqEy');
