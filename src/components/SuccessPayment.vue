@@ -61,7 +61,9 @@ export default {
     }
 
     setCookie('customerId', customerId, 30);
-    this.$router.push('home');
+    setTimeout(() => {
+      this.$router.push({ name: 'home' });
+    }, 3000);
   },
   data() {
     return {};
