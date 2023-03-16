@@ -37,7 +37,7 @@ export default {
       'pk_test_51MlUlIIfSGgugy8a3BP9NeyNrH5lOQRcVJDJuQedLzpSZoLZMUo0HwwBv0RlEUAUqPOck2hCdqK09k2dng5HmitX00nOyQ6wMV'
     );
 
-    console.log(stripe);
+    // console.log(stripe);
     // const customer = await stripe.customers.retrieve('cus_NWiFORBHIfOqEy');
     let stories = await fetch(
       'https://subscription-server.herokuapp.com/posts'

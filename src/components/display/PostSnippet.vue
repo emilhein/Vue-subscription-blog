@@ -63,8 +63,9 @@
         <i class="fab fa-instagram"></i>
         <i class="fab fa-github"></i>
       </div>
-
+<a href="post/3">
       <button>{{ subscribed ? 'Read' : 'Premium' }}</button>
+<a/>
     </div>
   </div>
 </template>
