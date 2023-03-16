@@ -1,46 +1,45 @@
 <template>
-
   <div class="container">
     <div :class="`card ${id % 2 === 0 ? 'card-one' : 'card2'}`">
       <h2>{{ title }}</h2>
       <i class="fas fa-arrow-right"></i>
       <!-- <p>a lonely trip.</p> -->
       <div class="pic" :style="`background-image : url(${img})`"></div>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li> 
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-        <div class="social">
-          <i class="fab fa-facebook-f"></i>
-          <i class="fab fa-twitter"></i>
-          <i class="fab fa-instagram"></i>
-          <i class="fab fa-github"></i>
-        </div>
-                        
-                        <a :href="`post/${id}`">
-                            <button>{{ subscribed ? 'Read' : 'Premium' }}</button>
-                        <a/>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="social">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-github"></i>
+      </div>
+
+      <a :href="`post/${id}`">
+        <button>{{ subscribed ? 'Read' : 'Premium' }}</button>
+      </a>
     </div>
   </div>
 </template>
