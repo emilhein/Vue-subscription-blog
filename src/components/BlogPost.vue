@@ -1,15 +1,21 @@
 <template>
-  <div class="hello">
-    <h1>The post is {{ $route.params.id }}</h1>
-  </div>
+  <h1>Your trying to read post {{ $route.params.id }}</h1>
+  <h3>{{ article.body }}</h3>
+  <Checkout v-if="article.body === 'Not subscribed'" />
 </template>
 
 <script>
+import Checkout from './Checkout';
+
 export default {
   name: 'BlogPost',
+  components: { Checkout },
   data() {
     return {
-      article: null,
+      article: {
+        id: null,
+        body: '',
+      },
     };
   },
   async mounted() {
@@ -40,4 +46,4 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style></style>
