@@ -9,12 +9,6 @@
       :img="story.img"
     />
   </div>
-  <!-- <div class="description">
-    <h3>{{ userSubscribed }}</h3>
-  </div>
-  <section>
-    <h3>{{ customerId }}</h3>
-  </section> -->
 
   <Checkout v-show="!userSubscribed" />
 </template>
@@ -23,7 +17,6 @@
 import Checkout from './Checkout';
 import Snippet from './display/PostSnippet';
 import Subscribed from './display/Subscribed';
-// import { loadStripe } from '@stripe/stripe-js';
 
 export default {
   components: { Checkout, Snippet, Subscribed },
@@ -33,12 +26,7 @@ export default {
     this.$nextTick(() => {
       console.log(this.getCookie('customerId'));
     });
-    // const stripe = await loadStripe(
-    //   'pk_test_51MlUlIIfSGgugy8a3BP9NeyNrH5lOQRcVJDJuQedLzpSZoLZMUo0HwwBv0RlEUAUqPOck2hCdqK09k2dng5HmitX00nOyQ6wMV'
-    // );
 
-    // console.log(stripe);
-    // const customer = await stripe.customers.retrieve('cus_NWiFORBHIfOqEy');
     let stories = await fetch(
       'https://subscription-server.herokuapp.com/posts'
     );
